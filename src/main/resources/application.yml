@@ -1,0 +1,17 @@
+spring:
+  profiles:
+    default: dev
+  application:
+    name: parameter-store
+  config:
+    import: aws-parameterstore:/myapp/common/;/myapp/${spring.profiles.active:dev}/
+  cloud:
+    aws:
+      region:
+        static: ${AWS_REGION:sa-east-1}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh
