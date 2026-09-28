@@ -14,6 +14,6 @@ public class ConfigController {
 
     @GetMapping("/config")
     public String getConfig() {
-        return "App name from config: " + appName;
+        return "App name from parameter store: " + appName;
     }
 }
